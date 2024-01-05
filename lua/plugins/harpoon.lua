@@ -20,7 +20,7 @@ return {
             })
             return {
                 { '<leader>hq', toggle_quick_menu, desc = '[Q]uick Menu' },
-                { '<leader>ha', append_file, desc = '[A]ppend File' },
+                { '<leader>ha', append_file,       desc = '[A]ppend File' },
             }
         end,
         config = function()
