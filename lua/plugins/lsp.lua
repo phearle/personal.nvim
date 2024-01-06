@@ -1,3 +1,5 @@
+-- much of this is taken from kickstart.nvim
+
 local servers = {
     lua_ls = {
         Lua = {
@@ -7,7 +9,6 @@ local servers = {
     },
 }
 
--- taken from kickstart.nvim
 local on_attach = function(_, bufnr)
     local nmap = function(keys, func, desc)
         if desc then
@@ -102,7 +103,16 @@ return {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
                     { name = 'path' },
-                }
+                },
+                mapping = cmp.mapping.preset.insert({
+                    ['<C-j>'] = cmp.mapping.select_next_item(),
+                    ['<C-k>'] = cmp.mapping.select_prev_item(),
+                    ['<C-Space>'] = cmp.mapping.complete({}),
+                    ['<CR>'] = cmp.mapping.confirm({
+                        behavior = cmp.ConfirmBehavior.Replace,
+                        select = true,
+                    }),
+                })
             })
         end,
     },
