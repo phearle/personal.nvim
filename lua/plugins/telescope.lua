@@ -37,8 +37,8 @@ return {
             }
         },
         keys = function()
-            local builtin = require('telescope.builtin')
             local git_root = nil
+            local builtin = require('telescope.builtin')
             local get_git_root = function()
                 if not git_root then
                     git_root = find_git_root()
@@ -56,19 +56,39 @@ return {
                 })
             end
             require('which-key').register({
-                ['<leader>s'] = { name = 'Tele[s]cope', _ = 'which_key_ignore' },
+                ['<leader>s'] = { name = 'Telescope', _ = 'which_key_ignore' },
             })
             return {
                 { "<leader><space>", builtin.buffers,     desc = "Search Buffers" },
-                { "<leader>sc",      builtin.colorscheme, desc = "Search [C]olorschemes" },
+                { "<leader>sc",      builtin.commands,    desc = "Search [C]ommands" },
                 { "<leader>sd",      builtin.diagnostics, desc = "Search [D]iagnostics" },
                 { "<leader>sf",      find_files,          desc = "Search [F]iles" },
                 { "<leader>sg",      live_grep,           desc = "Live [G]rep" },
                 { "<leader>sh",      builtin.help_tags,   desc = "Search [H]elp tags" },
                 { "<leader>ss",      builtin.builtin,     desc = "Search [S]elect Telescope" },
+                { "<leader>ss",      builtin.builtin,     desc = "Search [S]elect Telescope" },
             }
         end,
         config = function()
+            require('telescope').setup({
+                defaults = {
+                    layout_config = {
+                        vertical = { width = 0.9 },
+                    },
+                },
+                pickers = {
+                    find_files = {
+                        layout_strategy = 'vertical',
+                    },
+                    diagnostics = {
+                        layout_strategy = 'vertical',
+                    },
+                    commands = {
+                        theme = 'ivy',
+                        layout_strategy = 'vertical',
+                    },
+                },
+            })
             pcall(require('telescope').load_extension, 'fzf')
         end,
     }
