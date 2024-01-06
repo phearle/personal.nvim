@@ -2,10 +2,10 @@ return {
     'mbbill/undotree',
     keys = function()
         require('which-key').register({
-            ['<leader>u'] = { name = '[U]ndotree', _ = 'which_key_ignore' },
+            ['<leader>u'] = { name = 'Undotree', _ = 'which_key_ignore' },
         })
         return {
-            { '<leader>ut', '<cmd>UndotreeToggle<cr>', desc = 'Undotree [T]oggle' },
+            { '<leader>ut', '<cmd>UndotreeToggle<cr>', desc = 'Undotree Toggle' },
         }
     end
 }

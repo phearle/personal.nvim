@@ -22,7 +22,7 @@ return {
                 end
             end
             require('which-key').register({
-                ['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
+                ['<leader>h'] = { name = 'Harpoon', _ = 'which_key_ignore' },
             })
             return {
                 { '<leader>ho', toggle_quick_menu, desc = 'Open Quick Menu' },

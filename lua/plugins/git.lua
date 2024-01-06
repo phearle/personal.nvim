@@ -1,18 +1,18 @@
 return {
     {
         'lewis6991/gitsigns.nvim',
-        config = function ()
+        config = function()
             require('gitsigns').setup()
         end,
     },
     {
         'kdheepak/lazygit.nvim',
-        keys = function ()
+        keys = function()
             require('which-key').register({
-                ['<leader>g'] = { name = 'Lazy [G]it', _ = 'which_key_ignore' },
+                ['<leader>g'] = { name = 'Lazy Git', _ = 'which_key_ignore' },
             })
             return {
-                { '<leader>gg', '<cmd>:LazyGit<cr>', desc = '[G]it UI' },
+                { '<leader>gg', '<cmd>:LazyGit<cr>', desc = 'Git UI' },
             }
         end,
         dependencies = {

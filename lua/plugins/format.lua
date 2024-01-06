@@ -8,7 +8,7 @@ return {
                 require('conform').format({ async = true, lsp_fallback = true })
             end
             return {
-                { '<leader>f', format, desc = '[F]ormat', mode = "" },
+                { '<leader>f', format, desc = 'Format', mode = "" },
             }
         end,
         opts = {
