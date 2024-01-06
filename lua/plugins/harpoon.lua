@@ -15,12 +15,22 @@ return {
                 local harpoon = require('harpoon')
                 harpoon:list():append()
             end
+            local selector = function(number)
+                return function()
+                    local harpoon = require('harpoon')
+                    harpoon:list():select(number)
+                end
+            end
             require('which-key').register({
                 ['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
             })
             return {
-                { '<leader>hq', toggle_quick_menu, desc = '[Q]uick Menu' },
-                { '<leader>ha', append_file,       desc = '[A]ppend File' },
+                { '<leader>ho', toggle_quick_menu, desc = 'Open Quick Menu' },
+                { '<leader>ha', append_file,       desc = 'Append File' },
+                { '<leader>hh', selector(1),       desc = 'Select Item 1' },
+                { '<leader>hj', selector(2),       desc = 'Select Item 2' },
+                { '<leader>hk', selector(3),       desc = 'Select Item 3' },
+                { '<leader>hl', selector(4),       desc = 'Select Item 4' },
             }
         end,
         config = function()
