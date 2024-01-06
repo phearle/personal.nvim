@@ -37,9 +37,6 @@ return {
                 { '<leader>hl', selector(4),       desc = 'Select Item 4' },
             }
         end,
-        config = function()
-            local harpoon = require('harpoon')
-            harpoon:setup()
-        end,
+        opts = {},
     }
 }

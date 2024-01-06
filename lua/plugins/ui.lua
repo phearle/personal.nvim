@@ -9,13 +9,9 @@ return {
         dependencies = {
             'nvim-tree/nvim-web-devicons'
         },
-        config = function()
-            require('lualine').setup({
-                options = {
-                    theme = 'tokyonight'
-                },
-            })
-        end,
+        opts = {
+            theme = 'tokyonight'
+        },
     },
     {
         'utilyre/barbecue.nvim',
@@ -34,8 +30,6 @@ return {
             'MunifTanjim/nui.nvim',
             'rcarriga/nvim-notify',
         },
-        config = function()
-            require('noice').setup();
-        end,
+        opts = {},
     }
 }

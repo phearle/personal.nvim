@@ -47,8 +47,5 @@ return {
             { '<leader>xr', lsp_references, desc = 'LSP References' },
         }
     end,
-
-    config = function()
-        require('trouble').setup()
-    end
+    opts = {},
 }
