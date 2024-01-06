@@ -7,18 +7,22 @@ return {
             'folke/which-key.nvim',
         },
         keys = function()
+            -- Toggles the Harpoon quick menu
             local toggle_quick_menu = function()
                 local harpoon = require('harpoon')
                 harpoon.ui:toggle_quick_menu(harpoon:list())
             end
+            -- Appends a file to Harpoon list
             local append_file = function()
                 local harpoon = require('harpoon')
                 harpoon:list():append()
             end
-            local selector = function(number)
+            -- Returns a function that selects the list item at the given slot number.
+            local selector = function(slot_number)
+                -- Jumps to an item
                 return function()
                     local harpoon = require('harpoon')
-                    harpoon:list():select(number)
+                    harpoon:list():select(slot_number)
                 end
             end
             require('which-key').register({

@@ -12,7 +12,7 @@ return {
                 ['<leader>g'] = { name = 'Lazy Git', _ = 'which_key_ignore' },
             })
             return {
-                { '<leader>gg', '<cmd>:LazyGit<cr>', desc = 'Git UI' },
+                { '<leader>gg', '<cmd>:LazyGit<cr>', desc = 'Open UI' },
             }
         end,
         dependencies = {

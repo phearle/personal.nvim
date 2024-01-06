@@ -10,6 +10,7 @@ local servers = {
 }
 
 local on_attach = function(_, bufnr)
+    -- Helper for setting key maps.
     local nmap = function(keys, func, desc)
         -- if desc then
         --     desc = 'LSP: ' .. desc
