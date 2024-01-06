@@ -36,15 +36,15 @@ return {
             ['<leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
         })
         return {
-            { '<leader>xx', toggle,         desc = 'Trouble Toggle' },
-            { '<leader>xw', workspace_diag, desc = 'Trouble Toggle Workspace Diagnostics' },
-            { '<leader>xd', document_diag,  desc = 'TroubleToggle Document Diagnostics' },
-            { '<leader>xq', quickfix,       desc = 'TroubleToggle Quickfix' },
-            { '<leader>xl', loclist,        desc = 'TroubleToggle Loclist' },
-            { '<leader>xo', open,           desc = 'Trouble Open' },
-            { '<leader>xn', next,           desc = 'Trouble Next Item' },
-            { '<leader>xp', prev,           desc = 'Trouble Previous Item' },
-            { '<leader>xr', lsp_references, desc = 'Trouble LSP References' },
+            { '<leader>xx', toggle,         desc = 'Toggle' },
+            { '<leader>xw', workspace_diag, desc = 'Toggle Workspace Diagnostics' },
+            { '<leader>xd', document_diag,  desc = 'Document Diagnostics' },
+            { '<leader>xq', quickfix,       desc = 'Quickfix' },
+            { '<leader>xl', loclist,        desc = 'Loclist' },
+            { '<leader>xo', open,           desc = 'Open' },
+            { '<leader>xn', next,           desc = 'Next Item' },
+            { '<leader>xp', prev,           desc = 'Previous Item' },
+            { '<leader>xr', lsp_references, desc = 'LSP References' },
         }
     end,
 

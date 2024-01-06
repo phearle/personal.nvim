@@ -11,22 +11,25 @@ local servers = {
 
 local on_attach = function(_, bufnr)
     local nmap = function(keys, func, desc)
-        if desc then
-            desc = 'LSP: ' .. desc
-        end
+        -- if desc then
+        --     desc = 'LSP: ' .. desc
+        -- end
 
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
     end
 
+    require('which-key').register({
+        ['<leader>l'] = { name = 'LSP', _ = 'which_key_ignore' },
+    })
     nmap('<leader>lr', vim.lsp.buf.rename, 'Rename')
-    nmap('<leader>lca', vim.lsp.buf.code_action, 'Code Action')
+    nmap('<leader>la', vim.lsp.buf.code_action, 'Code Action')
 
     nmap('<leader>ld', require('telescope.builtin').lsp_definitions, 'Goto Definition')
     nmap('<leader>lr', require('telescope.builtin').lsp_references, 'Goto References')
     nmap('<leader>lI', require('telescope.builtin').lsp_implementations, 'Goto Implementation')
     nmap('<leader>lD', require('telescope.builtin').lsp_type_definitions, 'Type Definition')
-    nmap('<leader>lds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
-    nmap('<leader>lws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
+    nmap('<leader>lsd', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
+    nmap('<leader>lsw', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
 
     -- See `:help K` for why this keymap
     nmap('K', vim.lsp.buf.hover, 'Hover Documentation')

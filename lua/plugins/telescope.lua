@@ -60,13 +60,13 @@ return {
             })
             return {
                 { "<leader><space>", builtin.buffers,     desc = "Search Buffers" },
-                { "<leader>sc",      builtin.commands,    desc = "Search [C]ommands" },
-                { "<leader>sd",      builtin.diagnostics, desc = "Search [D]iagnostics" },
-                { "<leader>sf",      find_files,          desc = "Search [F]iles" },
-                { "<leader>sg",      live_grep,           desc = "Live [G]rep" },
-                { "<leader>sh",      builtin.help_tags,   desc = "Search [H]elp tags" },
-                { "<leader>ss",      builtin.builtin,     desc = "Search [S]elect Telescope" },
-                { "<leader>ss",      builtin.builtin,     desc = "Search [S]elect Telescope" },
+                { "<leader>sc",      builtin.commands,    desc = "Search Commands" },
+                { "<leader>sd",      builtin.diagnostics, desc = "Search Diagnostics" },
+                { "<leader>sf",      find_files,          desc = "Search Files" },
+                { "<leader>sg",      live_grep,           desc = "Live Grep" },
+                { "<leader>sh",      builtin.help_tags,   desc = "Search Help tags" },
+                { "<leader>ss",      builtin.builtin,     desc = "Search Select Telescope" },
+                { "<leader>ss",      builtin.builtin,     desc = "Search Select Telescope" },
             }
         end,
         config = function()
