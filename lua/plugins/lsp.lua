@@ -21,6 +21,7 @@ local on_attach = function(_, bufnr)
 
     require('which-key').register({
         ['<leader>l'] = { name = 'LSP', _ = 'which_key_ignore' },
+        ['<leader>ls'] = { name = 'Symbols', _ = 'which_key_ignore' },
     })
     nmap('<leader>lr', vim.lsp.buf.rename, 'Rename')
     nmap('<leader>la', vim.lsp.buf.code_action, 'Code Action')

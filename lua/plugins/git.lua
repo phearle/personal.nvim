@@ -9,10 +9,10 @@ return {
         'kdheepak/lazygit.nvim',
         keys = function()
             require('which-key').register({
-                ['<leader>g'] = { name = 'Lazy Git', _ = 'which_key_ignore' },
+                ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
             })
             return {
-                { '<leader>gg', '<cmd>:LazyGit<cr>', desc = 'Open UI' },
+                { '<leader>gg', '<cmd>:LazyGit<cr>', desc = 'LazyGit UI' },
             }
         end,
         dependencies = {
