@@ -26,5 +26,16 @@ return {
             'nvim-tree/nvim-web-devicons',
         },
         opts = {},
+    },
+    {
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            'rcarriga/nvim-notify',
+        },
+        config = function()
+            require('noice').setup();
+        end,
     }
 }
