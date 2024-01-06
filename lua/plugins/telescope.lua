@@ -66,7 +66,6 @@ return {
                 { "<leader>sg",      live_grep,           desc = "Live Grep" },
                 { "<leader>sh",      builtin.help_tags,   desc = "Search Help tags" },
                 { "<leader>ss",      builtin.builtin,     desc = "Search Select Telescope" },
-                { "<leader>ss",      builtin.builtin,     desc = "Search Select Telescope" },
             }
         end,
         config = function()
