@@ -7,12 +7,15 @@ return {
         build = ':TSUpdate',
         config = function()
             require('nvim-treesitter.configs').setup({
+                modules = {},
                 ensure_installed = {
                     'c', 'cpp', 'go', 'lua', 'python', 'rust',
                     'javascript', 'typescript', 'bash', 'markdown',
                     'markdown_inline', 'regex', 'templ'
                 },
+                auto_install = true,
                 sync_install = false,
+                ignore_install = {},
                 highlight = {
                     enable = true,
                 },
