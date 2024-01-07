@@ -9,9 +9,8 @@ return {
             require('nvim-treesitter.configs').setup({
                 modules = {},
                 ensure_installed = {
-                    'c', 'cpp', 'go', 'lua', 'python', 'rust',
-                    'javascript', 'typescript', 'bash', 'markdown',
-                    'markdown_inline', 'regex', 'templ'
+                    'bash', 'c', 'cpp', 'go', 'javascript', 'lua', 'markdown', 'markdown_inline', 'ocaml', 'odin',
+                    'python', 'regex', 'rust', 'templ', 'typescript',
                 },
                 auto_install = true,
                 sync_install = false,
@@ -30,5 +29,8 @@ return {
     },
     {
         'nvim-treesitter/nvim-treesitter-context',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter'
+        },
     }
 }
