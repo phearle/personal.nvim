@@ -1,7 +1,8 @@
 return {
     'folke/trouble.nvim',
     dependencies = {
-        'nvim-tree/nvim-web-devicons'
+        'nvim-tree/nvim-web-devicons',
+        'folke/todo-comments.nvim',
     },
     keys = function()
         local trouble = require('trouble')
@@ -35,6 +36,7 @@ return {
         require('which-key').register({
             ['<leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
         })
+        local todo_cmd = '<cmd>TodoTrouble<cr>'
         return {
             { '<leader>xx', toggle,         desc = 'Toggle' },
             { '<leader>xw', workspace_diag, desc = 'Toggle Workspace Diagnostics' },
@@ -45,6 +47,7 @@ return {
             { '<leader>xn', next,           desc = 'Next Item' },
             { '<leader>xp', prev,           desc = 'Previous Item' },
             { '<leader>xr', lsp_references, desc = 'LSP References' },
+            { '<leader>xt', todo_cmd,       desc = 'LSP References' },
         }
     end,
     opts = {},
