@@ -15,7 +15,7 @@ return {
                 ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
             })
             return {
-                { '<leader>gg', '<cmd>Neogit cwd=%:p:h<cr>', desc = 'Open Neogit' },
+                { '<leader>gg', '<cmd>Neogit kind=split_above cwd=%:p:h<cr>', desc = 'Open Neogit' },
             }
         end,
         config = true
