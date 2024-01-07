@@ -34,7 +34,8 @@ return {
                 cond = function()
                     return vim.fn.executable 'make' == 1
                 end,
-            }
+            },
+            'folke/todo-comments.nvim'
         },
         keys = function()
             local git_root = nil
@@ -59,13 +60,14 @@ return {
                 ['<leader>s'] = { name = 'Telescope', _ = 'which_key_ignore' },
             })
             return {
-                { "<leader><space>", builtin.buffers,     desc = "Search Buffers" },
-                { "<leader>sc",      builtin.commands,    desc = "Search Commands" },
-                { "<leader>sd",      builtin.diagnostics, desc = "Search Diagnostics" },
-                { "<leader>sf",      find_files,          desc = "Search Files" },
-                { "<leader>sg",      live_grep,           desc = "Live Grep" },
-                { "<leader>sh",      builtin.help_tags,   desc = "Search Help tags" },
-                { "<leader>ss",      builtin.builtin,     desc = "Search Select Telescope" },
+                { "<leader><space>", builtin.buffers,                                 desc = "Search Buffers" },
+                { "<leader>sc",      builtin.commands,                                desc = "Search Commands" },
+                { "<leader>sd",      builtin.diagnostics,                             desc = "Search Diagnostics" },
+                { "<leader>sf",      find_files,                                      desc = "Search Files" },
+                { "<leader>sg",      live_grep,                                       desc = "Live Grep" },
+                { "<leader>sh",      builtin.help_tags,                               desc = "Search Help tags" },
+                { "<leader>ss",      builtin.builtin,                                 desc = "Search Select Telescope" },
+                { "<leader>st",      "<cmd>TodoTelescope keywords=TODO,FIX,NOTE<cr>", desc = "Search TODOs, FIXes, etc." },
             }
         end,
         config = function()
@@ -77,6 +79,9 @@ return {
                 },
                 pickers = {
                     find_files = {
+                        layout_strategy = 'vertical',
+                    },
+                    live_grep = {
                         layout_strategy = 'vertical',
                     },
                     diagnostics = {
