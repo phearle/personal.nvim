@@ -27,7 +27,7 @@ local on_attach = function(_, bufnr)
     nmap('<leader>la', vim.lsp.buf.code_action, 'Code Action')
 
     nmap('<leader>ld', require('telescope.builtin').lsp_definitions, 'Goto Definition')
-    nmap('<leader>lr', require('telescope.builtin').lsp_references, 'Goto References')
+    nmap('<leader>lR', require('telescope.builtin').lsp_references, 'Goto References')
     nmap('<leader>lI', require('telescope.builtin').lsp_implementations, 'Goto Implementation')
     nmap('<leader>lD', require('telescope.builtin').lsp_type_definitions, 'Type Definition')
     nmap('<leader>lsd', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
