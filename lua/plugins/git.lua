@@ -4,20 +4,37 @@ return {
         opts = {},
     },
     {
-        'kdheepak/lazygit.nvim',
+        'NeogitOrg/neogit',
         dependencies = {
-            'nvim-lua/plenary.nvim'
+            'nvim-lua/plenary.nvim',
+            'sindrets/diffview.nvim',
+            'nvim-telescope/telescope.nvim',
         },
         keys = function()
             require('which-key').register({
                 ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
             })
             return {
-                { '<leader>gg', '<cmd>:LazyGit<cr>', desc = 'LazyGit UI' },
+                { '<leader>gg', '<cmd>Neogit cwd=%:p:h<cr>', desc = 'Open Neogit' },
             }
         end,
-        config = function()
-            require('telescope').load_extension('lazygit')
-        end,
+        config = true
     }
+    -- {
+    --     'kdheepak/lazygit.nvim',
+    --     dependencies = {
+    --         'nvim-lua/plenary.nvim'
+    --     },
+    --     keys = function()
+    --         require('which-key').register({
+    --             ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
+    --         })
+    --         return {
+    --             { '<leader>gg', '<cmd>:LazyGit<cr>', desc = 'LazyGit UI' },
+    --         }
+    --     end,
+    --     config = function()
+    --         require('telescope').load_extension('lazygit')
+    --     end,
+    -- }
 }
