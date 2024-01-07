@@ -90,6 +90,7 @@ return {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-path',
             'rafamadriz/friendly-snippets',
+            'onsails/lspkind.nvim',
         },
         config = function()
             local cmp = require('cmp')
@@ -109,6 +110,7 @@ return {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
                     { name = 'path' },
+                    { name = 'codeium' },
                 },
                 mapping = cmp.mapping.preset.insert({
                     ['<C-j>'] = cmp.mapping.select_next_item(),
@@ -118,7 +120,15 @@ return {
                         behavior = cmp.ConfirmBehavior.Replace,
                         select = true,
                     }),
-                })
+                }),
+                formatting = {
+                    format = require('lspkind').cmp_format({
+                        mode = 'symbol',
+                        maxwidth = 50,
+                        ellipsis_char = '...',
+                        symbol_map = { Codeium = "" },
+                    })
+                },
             })
         end,
     },
