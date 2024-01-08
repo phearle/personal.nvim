@@ -1,10 +1,8 @@
 local tokyonight = {
     'folke/tokyonight.nvim',
+    name = 'tokyonight',
     lazy = true,
     priority = 1000,
-    config = function()
-        -- vim.cmd.colorscheme 'tokyonight-night'
-    end,
 }
 
 local rosepine = {
@@ -12,9 +10,6 @@ local rosepine = {
     name = 'rose-pine',
     lazy = true,
     priority = 1000,
-    config = function()
-        vim.cmd.colorscheme 'rose-pine'
-    end
 }
 
 return {
