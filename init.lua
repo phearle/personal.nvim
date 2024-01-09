@@ -42,4 +42,4 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.undofile = true
 vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
-vim.cmd.colorscheme 'rose-pine'
+vim.cmd.colorscheme 'tokyonight'

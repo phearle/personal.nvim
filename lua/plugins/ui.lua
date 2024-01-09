@@ -9,10 +9,7 @@ return {
         dependencies = {
             'nvim-tree/nvim-web-devicons'
         },
-        opts = {
-            --theme = 'tokyonight'
-            theme = 'rose-pine'
-        },
+        opts = {},
     },
     {
         'utilyre/barbecue.nvim',
