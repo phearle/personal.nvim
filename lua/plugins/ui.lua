@@ -28,7 +28,14 @@ return {
             'MunifTanjim/nui.nvim',
             'rcarriga/nvim-notify',
         },
-        opts = {},
+        opts = {
+            messages = {
+                enabled = false,
+            },
+            notify = {
+                enabled = false,
+            },
+        },
     },
     {
         'folke/todo-comments.nvim',
