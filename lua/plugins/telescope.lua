@@ -47,7 +47,8 @@ return {
             end
             local find_files = function()
                 return builtin.find_files({
-                    cwd = get_git_root()
+                    find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+                    cwd = get_git_root(),
                 })
             end
             local live_grep = function()
