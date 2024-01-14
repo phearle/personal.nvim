@@ -45,16 +45,32 @@ return {
                 end
                 return git_root
             end
-            local find_files = function()
-                return builtin.find_files({
-                    find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
-                    cwd = get_git_root(),
-                })
+
+            local file_finder = function()
+                local file_ignore_patterns = {
+                    '!node_modules',
+                    '!.git',
+                    '!*templ.go',
+                    '!*.sqlite3',
+                }
+                local find_command = { 'rg', '--files', '--hidden' }
+                for _, p in ipairs(file_ignore_patterns) do
+                    table.insert(find_command, '-g')
+                    table.insert(find_command, p)
+                end
+                return function()
+                    return builtin.find_files({
+                        find_command = find_command,
+                        cwd = get_git_root(),
+                    })
+                end
             end
-            local live_grep = function()
-                return builtin.live_grep({
-                    cwd = get_git_root()
-                })
+            local live_grep_finder = function()
+                return function()
+                    return builtin.live_grep({
+                        cwd = get_git_root()
+                    })
+                end
             end
             require('which-key').register({
                 ['<leader>s'] = { name = 'Telescope', _ = 'which_key_ignore' },
@@ -63,8 +79,8 @@ return {
                 { "<leader><space>", builtin.buffers,     desc = "Search Buffers" },
                 { "<leader>sc",      builtin.commands,    desc = "Search Commands" },
                 { "<leader>sd",      builtin.diagnostics, desc = "Search Diagnostics" },
-                { "<leader>sf",      find_files,          desc = "Search Files" },
-                { "<leader>sg",      live_grep,           desc = "Live Grep" },
+                { "<leader>sf",      file_finder(),       desc = "Search Files" },
+                { "<leader>sg",      live_grep_finder(),  desc = "Live Grep" },
                 { "<leader>sh",      builtin.help_tags,   desc = "Search Help tags" },
                 { "<leader>ss",      builtin.builtin,     desc = "Search Select Telescope" },
             }
