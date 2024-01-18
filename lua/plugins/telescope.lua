@@ -1,4 +1,4 @@
--- Taken from kickstart.nvim
+- Taken from kickstart.nvim
 local function find_git_root()
     -- Use the current buffer's path as the starting point for the git search
     local current_file = vim.api.nvim_buf_get_name(0)
@@ -96,10 +96,19 @@ return {
                     find_files = {
                         layout_strategy = 'vertical',
                     },
+                    buffers = {
+                        layout_strategy = 'vertical',
+                    },
                     live_grep = {
                         layout_strategy = 'vertical',
                     },
                     diagnostics = {
+                        layout_strategy = 'vertical',
+                    },
+                    help_tags = {
+                        layout_strategy = 'vertical',
+                    },
+                    builtin = {
                         layout_strategy = 'vertical',
                     },
                     commands = {

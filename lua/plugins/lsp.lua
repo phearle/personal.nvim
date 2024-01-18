@@ -7,6 +7,8 @@ local servers = {
             telemetry = { enable = false },
         },
     },
+    ols = {
+    }
 }
 
 local on_attach = function(_, bufnr)
