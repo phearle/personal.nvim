@@ -28,6 +28,7 @@ return {
         branch = '0.1.x',
         dependencies = {
             'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-frecency.nvim',
             {
                 'nvim-telescope/telescope-fzf-native.nvim',
                 build = 'make',
@@ -76,13 +77,15 @@ return {
                 ['<leader>s'] = { name = 'Telescope', _ = 'which_key_ignore' },
             })
             return {
-                { "<leader><space>", builtin.buffers,     desc = "Search Buffers" },
-                { "<leader>sc",      builtin.commands,    desc = "Search Commands" },
-                { "<leader>sd",      builtin.diagnostics, desc = "Search Diagnostics" },
-                { "<leader>sf",      file_finder(),       desc = "Search Files" },
-                { "<leader>sg",      live_grep_finder(),  desc = "Live Grep" },
-                { "<leader>sh",      builtin.help_tags,   desc = "Search Help tags" },
-                { "<leader>ss",      builtin.builtin,     desc = "Search Select Telescope" },
+                { "<leader><space>", builtin.buffers,               desc = "Search Buffers" },
+                { "<leader>sc",      builtin.commands,              desc = "Search Commands" },
+                { "<leader>sd",      builtin.diagnostics,           desc = "Search Diagnostics" },
+                { "<leader>sf",      file_finder(),                 desc = "Search Files" },
+                { "<leader>sg",      live_grep_finder(),            desc = "Live Grep" },
+                { "<leader>ss",      builtin.grep_string,           desc = "Grep Cursor String" },
+                { "<leader>sh",      builtin.help_tags,             desc = "Search Help tags" },
+                { "<leader>st",      builtin.builtin,               desc = "Search Select Telescope" },
+                { "<leader>sq",      '<cmd>Telescope frecency<cr>', desc = "Search Frecency" },
             }
         end,
         config = function()
@@ -97,9 +100,13 @@ return {
                         layout_strategy = 'vertical',
                     },
                     buffers = {
+                        theme = 'cursor',
                         layout_strategy = 'vertical',
                     },
                     live_grep = {
+                        layout_strategy = 'vertical',
+                    },
+                    grep_string = {
                         layout_strategy = 'vertical',
                     },
                     diagnostics = {
@@ -116,8 +123,15 @@ return {
                         layout_strategy = 'vertical',
                     },
                 },
+                extensions = {
+                    frecency = {
+                        theme = 'ivy',
+                        layout_strategy = 'vertical',
+                    },
+                },
             })
-            pcall(require('telescope').load_extension, 'fzf')
+            require('telescope').load_extension('fzf')
+            require('telescope').load_extension('frecency')
         end,
-    }
+    },
 }
