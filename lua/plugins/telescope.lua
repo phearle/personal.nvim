@@ -100,7 +100,6 @@ return {
                         layout_strategy = 'vertical',
                     },
                     buffers = {
-                        theme = 'cursor',
                         layout_strategy = 'vertical',
                     },
                     live_grep = {
