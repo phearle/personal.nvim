@@ -17,6 +17,7 @@ return {
                 go = { "golines", "gofumpt" },
                 sh = { "beautysh" },
                 zsh = { "beautysh" },
+                python = { "trim_whitespace" },
             },
             format_on_save = {
                 timeout_ms = 500,
