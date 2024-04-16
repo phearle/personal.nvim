@@ -7,6 +7,18 @@ local servers = {
             telemetry = { enable = false },
         },
     },
+    pyright = {
+        pyright = {
+            autoImportCompletion = true,
+        },
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = 'workspace',
+                exclude = { '.venv*' },
+            }
+        }
+    },
     ols = {
     }
 }
