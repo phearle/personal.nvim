@@ -86,6 +86,7 @@ return {
                 { "<leader>sh",      builtin.help_tags,             desc = "Search Help tags" },
                 { "<leader>st",      builtin.builtin,               desc = "Search Select Telescope" },
                 { "<leader>sq",      '<cmd>Telescope frecency<cr>', desc = "Search Frecency" },
+                { "<leader>sr",      builtin.resume,                desc = "Resume" },
             }
         end,
         config = function()
@@ -93,6 +94,10 @@ return {
                 defaults = {
                     layout_config = {
                         vertical = { width = 0.9 },
+                    },
+                    mappings = {
+                        i = { ["<c-t>"] = require('trouble.providers.telescope').open_with_trouble },
+                        n = { ["<c-t>"] = require('trouble.providers.telescope').open_with_trouble },
                     },
                 },
                 pickers = {
@@ -115,6 +120,9 @@ return {
                         layout_strategy = 'vertical',
                     },
                     builtin = {
+                        layout_strategy = 'vertical',
+                    },
+                    lsp_references = {
                         layout_strategy = 'vertical',
                     },
                     commands = {
