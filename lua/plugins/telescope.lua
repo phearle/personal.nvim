@@ -96,8 +96,8 @@ return {
                         vertical = { width = 0.9 },
                     },
                     mappings = {
-                        i = { ["<c-t>"] = require('trouble.providers.telescope').open_with_trouble },
-                        n = { ["<c-t>"] = require('trouble.providers.telescope').open_with_trouble },
+                        i = { ["<c-t>"] = require('trouble.sources.telescope').open },
+                        n = { ["<c-t>"] = require('trouble.sources.telescope').open },
                     },
                 },
                 pickers = {
