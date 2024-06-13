@@ -19,6 +19,12 @@ local servers = {
             }
         }
     },
+    perlnavigator = {
+        perlnavigator = {
+            enableWarnings = true,
+            perlCriticEnabled = true,
+        }
+    },
     ols = {
     }
 }
@@ -136,6 +142,7 @@ return {
                     }),
                 }),
                 formatting = {
+                    expandable_indicator = true,
                     format = require('lspkind').cmp_format({
                         mode = 'symbol',
                         maxwidth = 50,
