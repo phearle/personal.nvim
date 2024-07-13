@@ -73,8 +73,9 @@ return {
                     })
                 end
             end
-            require('which-key').register({
-                ['<leader>s'] = { name = 'Telescope', _ = 'which_key_ignore' },
+            require('which-key').add({
+                { '<leader>s',  group = 'Telescope' },
+                { '<leader>s_', hidden = true },
             })
             return {
                 { "<leader><space>", builtin.buffers,               desc = "Search Buffers" },

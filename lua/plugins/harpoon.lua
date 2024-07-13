@@ -25,8 +25,9 @@ return {
                     harpoon:list():select(slot_number)
                 end
             end
-            require('which-key').register({
-                ['<leader>h'] = { name = 'Harpoon', _ = 'which_key_ignore' },
+            require('which-key').add({
+                { '<leader>h',  group = 'Harpoon' },
+                { '<leader>h_', hidden = true },
             })
             return {
                 { '<leader>ho', toggle_quick_menu, desc = 'Open Quick Menu' },

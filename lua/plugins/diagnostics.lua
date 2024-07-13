@@ -33,8 +33,9 @@ return {
         local prev = function()
             trouble.previous({ skip_groups = true, jump = true })
         end
-        require('which-key').register({
-            ['<leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
+        require('which-key').add({
+            { '<leader>x',  group = "Trouble" },
+            { '<leader>x_', hidden = true },
         })
         local todo_cmd = '<cmd>TodoTrouble<cr>'
         return {

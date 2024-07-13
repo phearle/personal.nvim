@@ -11,8 +11,9 @@ return {
             'nvim-telescope/telescope.nvim',
         },
         keys = function()
-            require('which-key').register({
-                ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
+            require('which-key').add({
+                { "<leader>g",  group = "Git" },
+                { "<leader>g_", hidden = true },
             })
             return {
                 { '<leader>gg', '<cmd>Neogit kind=split_above cwd=%:p:h<cr>', desc = 'Open Neogit' },
