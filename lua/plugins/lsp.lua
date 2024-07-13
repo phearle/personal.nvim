@@ -44,9 +44,11 @@ local on_attach = function(_, bufnr)
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
     end
 
-    require('which-key').register({
-        ['<leader>l'] = { name = 'LSP', _ = 'which_key_ignore' },
-        ['<leader>ls'] = { name = 'Symbols', _ = 'which_key_ignore' },
+    require('which-key').add({
+        { '<leader>l',   group = 'LSP' },
+        { '<leader>l_',  hidden = true },
+        { '<leader>ls',  group = 'Symbols' },
+        { '<leader>ls_', hidden = true },
     })
     nmap('<leader>lR', vim.lsp.buf.rename, 'Rename')
     nmap('<leader>la', vim.lsp.buf.code_action, 'Code Action')
